@@ -1,0 +1,67 @@
+SIMPLE GITHUB VALIDATION DIRECTIONS
+
+1. Go to github.com and sign in or create a free account.
+
+2. Click the + symbol in the upper-right corner and choose "New repository."
+
+3. Name it something like:
+   HCUP-2019-Rare-Disease-Code-Validation
+
+4. Choose PUBLIC if you want the validation record accessible to journal reviewers/readers.
+   Do not add a README, .gitignore, or license on GitHub; they are already included.
+
+5. Click "Create repository."
+
+6. On the empty repository page, click "uploading an existing file."
+
+7. Unzip HCUP_2019_CODE_VALIDATION_REPOSITORY.zip on your computer.
+
+8. Upload the CONTENTS of the unzipped folder.
+   Keep the folder structure intact, especially:
+     .github/workflows/
+     R/
+     tests/
+     inst/analysis_scripts/
+     validation/
+
+   IMPORTANT: DO NOT upload any HCUP .ASC files or restricted HCUP-derived row-level data.
+
+9. Commit the files.
+
+10. Click the "Actions" tab.
+
+11. Open "Validate HCUP R code."
+
+12. The workflow should run automatically. If it does not, click "Run workflow."
+
+13. A GREEN CHECK MARK means the R package check and all predefined synthetic-data
+    validation tests passed in GitHub's fresh R environment.
+
+14. Open the successful workflow run. Review:
+      - Run R CMD check
+      - Create explicit validation report
+
+15. At the bottom of the run page, download:
+      HCUP-code-validation-report
+
+16. Save these items for your publication records:
+      - repository URL
+      - exact commit SHA
+      - GitHub Actions run URL
+      - date of validation
+      - downloaded validation report
+
+17. In the manuscript or supplement, reference the exact commit SHA, not only the
+    repository homepage.
+
+Suggested wording:
+"Final analytic code was archived with SHA-256 checksums and underwent automated
+reproducibility testing in an independent GitHub-hosted R environment. Predefined
+synthetic-data unit tests evaluated ICD-10 cohort assignment, exclusion criteria,
+mental-health procedure classification, procedure-complexity bins, weighting
+calculations, age restrictions, hospital classification, and derived percentage
+calculations. Restricted HCUP data were not uploaded to the external validation
+environment."
+
+This is automated independent-environment validation, not an independent human
+statistical review.

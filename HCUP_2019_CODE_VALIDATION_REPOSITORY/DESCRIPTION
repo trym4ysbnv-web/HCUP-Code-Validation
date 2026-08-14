@@ -1,0 +1,17 @@
+Package: HCUPCodeValidation
+Type: Package
+Title: Validation Harness for HCUP 2019 Rare Disease Analysis Code
+Version: 1.0.0
+Authors@R: person("Study", "Team", role = c("aut", "cre"), email = "validation@example.org")
+Description: Reproducibility and unit-test harness for the final HCUP 2019 rare
+    disease procedure and mental-health PCS analysis scripts. No restricted
+    HCUP data are included. Validation uses synthetic records with predefined
+    expected results.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.2.0)
+Imports:
+    data.table
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
