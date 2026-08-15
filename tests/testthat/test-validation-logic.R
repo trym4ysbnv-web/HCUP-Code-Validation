@@ -15,7 +15,7 @@ test_that("diagnosis matching is exact, not substring based", {
 })
 
 test_that("E83.42 alone does not qualify RareMed", {
-  d <- data.frame(I10_DX1=c("E83.42","E83.42"), I10_DX2=c(NA,"Q77.0"))
+  d <- data.frame(I10_DX1=c("E83.42","E83.42"), I10_DX2=c(NA,"Q77.4"))
   expect_equal(flag_exact_dx(d,c("I10_DX1","I10_DX2"),cohort_code_sets()$RareMed),
                c(0L,1L))
 })
