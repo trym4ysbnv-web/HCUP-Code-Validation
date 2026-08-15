@@ -6,7 +6,7 @@ test_that("ICD-10 normalization is correct", {
 test_that("RareMed excludes E83.42", {
   sets <- cohort_code_sets()
   expect_false("E8342" %in% normalize_icd10(sets$RareMed))
-  expect_true("Q770" %in% normalize_icd10(sets$RareMed))
+  expect_true("Q774" %in% normalize_icd10(sets$RareMed))
 })
 
 test_that("diagnosis matching is exact, not substring based", {
